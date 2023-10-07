@@ -7,9 +7,11 @@ export default function About() {
         new Notification("hello");
       }
     } else if (Notification.permission === "granted") {
-      new Notification("hello 中文");
+      setTimeout(() => {
+        new Notification("hello 中文");
+      },2000);
     }
-  },[]);
+  }, []);
 
   return (
     <div>
