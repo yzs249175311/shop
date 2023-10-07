@@ -1,0 +1,32 @@
+.form {
+  label {
+    color: #0005;
+    padding: 0 0.5rem;
+    pointer-events: none;
+    transform: translateY(2rem);
+    &:has(+ input:focus),
+    &:has(+ input:valid) {
+      color: #000;
+      transform: translateY(0);
+    }
+
+    &:has(+ input:not(:placeholder-shown):invalid) {
+      color: red;
+      transform: translateY(0);
+
+      &::after {
+        content: "(invalid)";
+      }
+    }
+
+    transition: 500ms ease;
+  }
+  input {
+    outline: 1px solid red;
+    border-radius: 5px;
+    padding: 0 0.5rem;
+    &::placeholder {
+      color: transparent;
+    }
+  }
+}
