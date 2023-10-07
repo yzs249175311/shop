@@ -4,6 +4,7 @@ import Home from "./routes/Home.component";
 import Greeting from "./routes/Greeting.component";
 import Auth from "./routes/Auth.component";
 import Shop from "./routes/Shop.component";
+import About from "./routes/About.component";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route index element={<Greeting />}></Route>
         <Route path="/sign" element={<Auth />}></Route>
         <Route path="/shop/*" element={<Shop />}></Route>
+        <Route path="/about" element={<About />}></Route>
       </Route>
     </Routes>
   );
