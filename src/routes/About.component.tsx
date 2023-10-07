@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 export default function About() {
   let nt = useCallback(async () => {
     if (Notification.permission === "default") {
@@ -9,8 +9,18 @@ export default function About() {
     } else if (Notification.permission === "granted") {
       setTimeout(() => {
         new Notification("hello 中文");
-      },2000);
+      }, 2000);
     }
+  }, []);
+
+  useEffect(() => {
+    navigator.serviceWorker
+      .register("/service-worker.js")
+      .then((registration) => {
+        console.log("注册成功:", registration);
+        registration.showNotification("register success");
+      })
+      .catch((err) => console.log("注册失败:", err));
   }, []);
 
   return (
