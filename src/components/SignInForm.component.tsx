@@ -1,5 +1,5 @@
 import { useState, SyntheticEvent } from "react";
-import Button from "./buttons/Button.component";
+import Button from "@/components/buttons/Button.component";
 import { Button as ButtonBase } from "@/App.styles";
 import {
   signInAuthWithEmailAndPassword,
